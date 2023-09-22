@@ -1,0 +1,35 @@
+.list-tasks{
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+
+.card{
+  margin: 1rem 0;
+  border: 0px;
+  box-shadow: 0px 0px 10px 0px #ebebeb;
+  .card-body{
+    display: flex;
+    align-items:center;
+    gap: .5rem;
+    font-size: 1rem;
+    color: inherit;
+    .icon-status{
+      color: #ba68c8;
+    }
+    .title{
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+    .description{
+      margin: 0;
+      line-height: 1.1;
+    }
+    .taskDone{
+      text-decoration: line-through;
+      color: #c2c2c2;
+      font-style: italic;
+    }
+  }
+}

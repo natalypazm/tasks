@@ -1,0 +1,33 @@
+.main-img{
+  height: 15rem;
+  display: block;
+  margin: auto;
+}
+
+.btn{
+  color:#ba68c8;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+    &--create{
+    font-size: 3rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    }
+    &--delete{
+      color:#9ba3ac;
+      font-size: 1.5rem;
+    }
+  }
+
+  .form-tasks .form-control{
+    margin:1rem 0;
+    color:1px solid #ba68c8;
+  }
+
+  .offcanvas-footer{
+    padding: 0 1rem;
+    text-align: right;
+    background: #f2f2f2;
+  }

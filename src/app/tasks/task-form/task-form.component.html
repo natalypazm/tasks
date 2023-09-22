@@ -1,0 +1,51 @@
+<ng-template #content let-offcanvas>
+	<div class="offcanvas-header text-center">
+    <h3 class="text-center">{{isEditing ? 'Edit Your Task': 'Add New Task'}}</h3>
+		<button type="button" class="btn-close" aria-label="Close" (click)='dismiss()'></button>
+	</div>
+  <div class="offcanvas-body">
+    <img class="main-img" src="../../../assets/todo.svg" alt="image about todolist">
+    <h6 class="text-center my-3">Be productive today and let's make a wonderful world.</h6>
+    <form class="form-tasks" [formGroup]="myform" (ngSubmit)="createOrUpdateTask()">
+      <div class="form-group">
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          formControlName="title"
+          placeholder="Add a task"
+        >
+        <div
+          class="text-danger"
+          *ngIf="myform.get('title')?.hasError('required') && myform.get('title')?.dirty"
+        >
+          Title is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea
+          id="description"
+          class="form-control"
+          formControlName="description"
+          placeholder="Add a description"
+        ></textarea>
+        <div
+          class="text-danger"
+          *ngIf="myform.get('description')?.hasError('required') && myform.get('description')?.dirty"
+        >
+          Description is required.
+        </div>
+      </div>
+      <div class="text-end">
+        <button class="btn btn--submit" type="submit" [disabled]="myform.invalid">
+          <i class="bi bi-send-plus"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="isEditing" class="offcanvas-footer">
+    <button class="btn btn--delete" (click)="deleteTask()"><i class="bi bi-trash-fill"></i></button>
+  </div>
+
+</ng-template>
+<button class="btn btn--create" (click)="buttonCreateTask(content)"><i class="bi bi-plus-circle "></i></button>

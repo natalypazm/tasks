@@ -1,0 +1,14 @@
+<ul class="list-tasks">
+  <li *ngFor="let task of tasks$ | async">
+    <div class="card">
+      <div class="card-body" (click)="updateTask(task.id)">
+          <i [ngClass]="task.isDone ? 'bi-check-circle-fill' : 'bi-circle'" class="icon-status bi" (click)="doneTask(task)"></i>
+          <div [ngClass]="{'taskDone': task.isDone}" class="card-content">
+            <h6 class="title">{{task.title}}</h6>
+            <p class="description">{{task.description}}</p>
+          </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
